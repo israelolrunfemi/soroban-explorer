@@ -1,6 +1,6 @@
 # Soroban Explorer
 
-A modern, feature-rich web application for exploring and analyzing Soroban smart contracts on the Stellar network. Built with React, TypeScript, and Tailwind CSS.
+A modern, feature-rich web application for exploring and analyzing Soroban smart contracts on the Stellar network. Built with Next, TypeScript, and Tailwind CSS(The frontend of the application.
 
 ![Soroban Explorer](https://img.shields.io/badge/Stellar-Soroban-purple)
 ![License](https://img.shields.io/badge/license-MIT-blue)
