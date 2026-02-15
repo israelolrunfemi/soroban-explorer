@@ -1,14 +1,14 @@
 {
   "name": "soroban-explorer",
   "version": "1.0.0",
-  "description": "A Next.js web explorer and analytics dashboard for Soroban smart contracts on Stellar",
+  "description": "A premium Web3 explorer for Soroban smart contracts on Stellar",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-  "keywords": ["stellar", "soroban", "blockchain", "smart-contracts", "nextjs"],
+  "keywords": ["stellar", "soroban", "blockchain", "smart-contracts", "nextjs", "web3"],
   "author": "",
   "license": "MIT",
   "dependencies": {
@@ -16,7 +16,8 @@
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "lucide-react": "^0.263.1"
+    "lucide-react": "^0.263.1",
+    "framer-motion": "^10.16.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

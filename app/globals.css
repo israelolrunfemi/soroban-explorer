@@ -2,19 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to bottom right, #0f172a, #1e293b);
-  min-height: 100vh;
-  color: white;
+@layer base {
+  body {
+    @apply bg-web3-darker text-white overflow-x-hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  * {
+    @apply border-white/10;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+  }
+  
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:bg-white/10 hover:border-web3-cyan/50 hover:shadow-glow-cyan;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-web3-cyan via-web3-blue to-web3-purple bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-web3-blue to-web3-purple hover:from-web3-cyan hover:to-web3-blue 
+           px-8 py-3 rounded-full font-semibold transition-all duration-300 
+           shadow-lg hover:shadow-glow-blue transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply glass-card px-8 py-3 rounded-full font-semibold 
+           hover:bg-white/10 hover:border-web3-cyan/50 
+           transition-all duration-300;
+  }
+
+  .section-glow {
+    position: relative;
+  }
+  
+  .section-glow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.15), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-web3-darker;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-web3-blue/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-web3-blue/50;
+}
+
+/* Animated gradient border */
+@keyframes rotate-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-border {
+  position: relative;
+  background: linear-gradient(90deg, #4A90E2, #7B61FF, #5DD9F5, #4A90E2);
+  background-size: 200% 200%;
+  animation: rotate-gradient 3s ease infinite;
 }
